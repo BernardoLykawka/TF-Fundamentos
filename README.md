@@ -1,2 +1,4 @@
-# TF-Fundamentos
+# TF Fundamentos
  Serviço de Compartilhamento de Bicicletas
+ 
+O aplicativo é destinado a um programa de empréstimo de bicicletas. Suas principais funções incluem a adição de novos membros e bicicletas ao sistema, bem como a exibição de listas de membros e bicicletas disponíveis. O aplicativo permite buscar membros pelo nome e bicicletas pelo modelo, facilitando a localização específica de cada um. Além disso, é possível emprestar uma bicicleta a um membro e registrar a devolução da bicicleta utilizando a matrícula do membro. O sistema também mostra a quantidade de bicicletas disponíveis para empréstimo em tempo real.
