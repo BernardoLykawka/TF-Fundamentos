@@ -1,3 +1,4 @@
+package App;
 public class Bike {
     private int codigo;
     private String modelo;

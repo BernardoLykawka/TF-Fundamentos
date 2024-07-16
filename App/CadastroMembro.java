@@ -1,3 +1,4 @@
+package App;
 public class CadastroMembro
 {    
     private Membro []membros;
