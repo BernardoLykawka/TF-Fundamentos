@@ -1,27 +1,26 @@
 package App;
+
 import java.util.Scanner;
 
-public class Clube
-{
+public class Clube {
     private Scanner in = new Scanner(System.in);
-    private int opcao, opcmodelo,matricula;
-    private String nome, cidade,modelo;
+    private int opcao, opcmodelo, matricula;
+    private String nome, cidade, modelo;
     private CadastroMembro cm;
     private CadastroBikes cb;
-    
-    public Clube(){
-        opcao=0;
-        nome="";
-        cidade="";
-        modelo="";
-        opcmodelo=-1;
-        matricula=-1;
+
+    public Clube() {
+        opcao = 0;
+        nome = "";
+        cidade = "";
+        modelo = "";
+        opcmodelo = -1;
+        matricula = -1;
         cm = new CadastroMembro();
         cb = new CadastroBikes();
     }
 
-    public void perguntaMenu()
-    {
+    public void perguntaMenu() {
         System.out.println("\n[1] Incluir Membro");
         System.out.println("[2] Mostrar membros");
         System.out.println("[3] Pesquisar membro por nome");
@@ -33,33 +32,33 @@ public class Clube
         System.out.println("[9] Quantidade total de unidades disponiveis");
         System.out.println("[10] Sair do programa");
     }
-    
-    public void acoes(){
-        while(opcao!=10){
+
+    public void acoes() {
+        while (opcao != 10) {
             perguntaMenu();
             opcao = in.nextInt();
-    
-            switch(opcao){
-                case 1:{
+
+            switch (opcao) {
+                case 1: {
                     System.out.println("\f");
-                
+
                     in.nextLine();
                     System.out.println("Qual o nome que deseja inserir?");
-                    nome=in.nextLine();
+                    nome = in.nextLine();
                     System.out.println("Qual a cidade do titular da conta?");
-                    cidade=in.nextLine();
-                    cm.addMembro(nome,cidade);
+                    cidade = in.nextLine();
+                    cm.addMembro(nome, cidade);
                     break;
                 }
-                case 2:{
+                case 2: {
                     System.out.println("\f");
                     cm.mostrarMembros();
                     break;
                 }
-                case 3:{
+                case 3: {
                     in.nextLine();
                     System.out.println("\fDigite o nome:");
-                    nome=in.nextLine();
+                    nome = in.nextLine();
                     cm.buscaMembroNome(nome);
                     break;
                 }
@@ -70,7 +69,7 @@ public class Clube
                     cb.addBikes(modelo);
                     break;
                 }
-                case 5:{
+                case 5: {
                     System.out.println("\f");
                     cb.mostrarBikes();
                     break;
@@ -95,7 +94,8 @@ public class Clube
                                 membro.emprestarBike(bike);
                                 System.out.println("Bicicleta emprestada com sucesso!");
                             } else {
-                                System.out.println("Não foi possível emprestar a bicicleta. Verifique se há bicicletas disponíveis.");
+                                System.out.println(
+                                        "Não foi possível emprestar a bicicleta. Verifique se há bicicletas disponíveis.");
                             }
                         } else {
                             System.out.println("O membro já possui uma bicicleta emprestada.");
@@ -121,17 +121,18 @@ public class Clube
                 case 9: {
                     cb.totalUnidades();
                     break;
-                }                
-                case 10:{
+                }
+                case 10: {
                     System.out.println("\fSaindo do programa...");
                     break;
                 }
-                default: System.out.println("Insira um número valido...");
-                
+                default:
+                    System.out.println("Insira um número valido...");
+
             }
         }
     }
-    
+
     public String escolherModelo() {
         while (true) {
             System.out.println("Escolha um modelo: ");
@@ -141,7 +142,7 @@ public class Clube
             System.out.println("[4] Bicicleta Elétrica");
 
             opcmodelo = in.nextInt();
-            in.nextLine();  
+            in.nextLine();
 
             switch (opcmodelo) {
                 case 1:
